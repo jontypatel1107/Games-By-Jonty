@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <main class="page-shell">
+        <section class="hero">
+            <p class="eyebrow">Classic strategy game</p>
+            <h1>Tic-Tac-Toe</h1>
+            <p class="subtitle">Take turns, lock in a line, and reset for a rematch.</p>
+            <div class="result" aria-live="polite"></div>
+        </section>
+        <section class="setup-card" aria-label="Player setup">
+            <label class="field">
+                <span>Player 1</span>
+                <input type="text" class="player-input" id="player1" maxlength="16" placeholder="Player 1" value="Player 1">
+            </label>
+            <label class="field">
+                <span>Player 2</span>
+                <input type="text" class="player-input" id="player2" maxlength="16" placeholder="Player 2" value="Player 2">
+            </label>
+        </section>
+        <section class="scoreboard" aria-label="Scoreboard">
+            <div class="score-chip">
+                <span class="score-label" id="score-name-1">Player 1</span>
+                <strong class="score-value" id="score-1">0</strong>
+            </div>
+            <div class="score-chip">
+                <span class="score-label">Draws</span>
+                <strong class="score-value" id="score-draws">0</strong>
+            </div>
+            <div class="score-chip">
+                <span class="score-label" id="score-name-2">Player 2</span>
+                <strong class="score-value" id="score-2">0</strong>
+            </div>
+        </section>
+        <section class="match-card" aria-label="Match status">
+            <div class="match-header">
+                <span class="match-badge">Best of 3</span>
+                <strong id="match-status">First to 2 round wins takes the match</strong>
+            </div>
+            <div class="match-track" aria-hidden="true">
+                <span class="match-pill" id="series-1">0</span>
+                <span class="match-divider">-</span>
+                <span class="match-pill" id="series-2">0</span>
+            </div>
+        </section>
+        <section class="container">
+            <div class="game" aria-label="Tic tac toe board">
+                <button type="button" class="box" aria-label="Top left cell"></button>
+                <button type="button" class="box" aria-label="Top center cell"></button>
+                <button type="button" class="box" aria-label="Top right cell"></button>
+                <button type="button" class="box" aria-label="Middle left cell"></button>
+                <button type="button" class="box" aria-label="Middle center cell"></button>
+                <button type="button" class="box" aria-label="Middle right cell"></button>
+                <button type="button" class="box" aria-label="Bottom left cell"></button>
+                <button type="button" class="box" aria-label="Bottom center cell"></button>
+                <button type="button" class="box" aria-label="Bottom right cell"></button>
+            </div>
+            <div class="actions">
+                <button class="secondary-btn rematch" type="button">Play Again</button>
+                <button class="reset" type="button">Reset Scores</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

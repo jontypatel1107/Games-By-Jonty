@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <main class="app-shell">
+        <section class="hero">
+            <p class="eyebrow">Typing challenge</p>
+            <h1>Typing Speed Test</h1>
+            <p class="subtitle">Pick a duration, type the prompt, and watch your speed build in real time.</p>
+        </section>
+
+        <section class="stats-bar" aria-label="Live stats">
+            <div class="stat-box">
+                <span>Time</span>
+                <strong id="timer">60</strong>
+            </div>
+            <div class="stat-box">
+                <span>WPM</span>
+                <strong id="wpm">0</strong>
+            </div>
+            <div class="stat-box">
+                <span>Accuracy</span>
+                <strong id="accuracy">100%</strong>
+            </div>
+            <div class="stat-box">
+                <span>Best WPM</span>
+                <strong id="bestWPM">0</strong>
+            </div>
+        </section>
+
+        <section class="progress-card" aria-label="Time progress">
+            <div class="progress-head">
+                <span>Progress</span>
+                <strong id="progressLabel">60s remaining</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </section>
+
+        <section class="control-panel">
+            <div class="panel-head">
+                <div>
+                    <p class="panel-label">Test length</p>
+                    <h2>Select your challenge</h2>
+                </div>
+                <div class="status-pill" id="sessionStatus">Ready to start</div>
+            </div>
+
+            <div class="timerButtons" role="group" aria-label="Choose test duration">
+                <button id="fifteen" class="but" type="button">15 Seconds</button>
+                <button id="thirty" class="but" type="button">30 Seconds</button>
+                <button id="sixty" class="but active" type="button">60 Seconds</button>
+            </div>
+        </section>
+
+        <section class="difficulty-card">
+            <div class="panel-head">
+                <div>
+                    <p class="panel-label">Difficulty</p>
+                    <h2>Choose your text set</h2>
+                </div>
+                <span class="leaderboard-note">Changes the prompts</span>
+            </div>
+
+            <div class="difficultyButtons" role="group" aria-label="Choose difficulty">
+                <button id="easy" class="but difficulty-btn active" type="button">Easy</button>
+                <button id="normal" class="but difficulty-btn" type="button">Normal</button>
+                <button id="hard" class="but difficulty-btn" type="button">Hard</button>
+            </div>
+        </section>
+
+        <section class="leaderboard-card" aria-label="Typing leaderboard">
+            <div class="leaderboard-head">
+                <div>
+                    <p class="panel-label">Leaderboard</p>
+                    <h2>Best runs</h2>
+                </div>
+                <span class="leaderboard-note">Saved on this device</span>
+            </div>
+
+            <div class="leaderboard-list">
+                <div class="leaderboard-row">
+                    <span class="rank">1</span>
+                    <div>
+                        <strong>Personal best WPM</strong>
+                        <p>Fastest speed you have hit so far.</p>
+                    </div>
+                    <strong id="leaderBestWPM">0</strong>
+                </div>
+                <div class="leaderboard-row">
+                    <span class="rank">2</span>
+                    <div>
+                        <strong>Best accuracy</strong>
+                        <p>Most precise run across all sessions.</p>
+                    </div>
+                    <strong id="leaderBestAccuracy">100%</strong>
+                </div>
+                <div class="leaderboard-row">
+                    <span class="rank">3</span>
+                    <div>
+                        <strong>Last result</strong>
+                        <p>Your most recent finished test.</p>
+                    </div>
+                    <strong id="leaderLastScore">--</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-card">
+            <div class="text-display" id="textDisplay" aria-live="polite">
+                Choose a duration and press Start Test.
+            </div>
+        </section>
+
+        <section class="typing-card">
+            <textarea id="typingArea" placeholder="Your text will be tracked here..." disabled></textarea>
+        </section>
+
+        <section class="actions">
+            <button id="startBtn" class="start-btn" type="button">Start Test</button>
+            <button id="resetBtn" class="reset-btn" type="button">Reset Session</button>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

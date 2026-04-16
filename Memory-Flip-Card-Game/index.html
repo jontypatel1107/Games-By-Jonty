@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Memory Flip Card Game</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero">
+            <p class="eyebrow">Memory challenge</p>
+            <h1>Memory Flip Card Game</h1>
+            <p class="subtitle">Flip the cards, match the pairs, and beat your best move count.</p>
+        </section>
+
+        <section class="stats-bar" aria-label="Game stats">
+            <div class="stat-box">
+                <span>Moves</span>
+                <strong id="moves">0</strong>
+            </div>
+            <div class="stat-box">
+                <span>Pairs</span>
+                <strong id="pairs">0</strong>
+            </div>
+            <div class="stat-box">
+                <span>Time</span>
+                <strong id="timeLeft">60</strong>
+            </div>
+            <div class="stat-box">
+                <span>Best Moves</span>
+                <strong id="bestScore">-</strong>
+            </div>
+        </section>
+
+        <section class="status-card">
+            <div class="status-line">
+                <span id="gameStatus">Ready to play</span>
+                <strong id="roundStatus">Tap Start to begin</strong>
+            </div>
+            <div class="timer-track" aria-hidden="true">
+                <div class="timer-fill" id="timerFill"></div>
+            </div>
+        </section>
+
+        <section class="controls-card">
+            <button id="startBtn" type="button" class="primary-btn">Start Game</button>
+            <div class="button-row">
+                <button id="restartBtn" type="button" class="secondary-btn">Restart Round</button>
+                <button id="resetBtn" type="button" class="danger-btn">Hard Reset</button>
+            </div>
+        </section>
+
+        <section class="difficulty-card" aria-label="Difficulty selection">
+            <div class="difficulty-heading">
+                <p class="eyebrow">Difficulty</p>
+                <strong>Pick a board size</strong>
+            </div>
+            <div class="difficulty-toggle" role="group" aria-label="Choose difficulty">
+                <button type="button" class="difficulty-btn active" data-difficulty="easy">
+                    Easy <span>4 pairs</span>
+                </button>
+                <button type="button" class="difficulty-btn" data-difficulty="normal">
+                    Normal <span>9 pairs</span>
+                </button>
+                <button type="button" class="difficulty-btn" data-difficulty="hard">
+                    Hard <span>12 pairs</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="theme-card" aria-label="Theme selection">
+            <div class="difficulty-heading">
+                <p class="eyebrow">Theme</p>
+                <strong>Choose a look</strong>
+            </div>
+            <div class="theme-toggle" role="group" aria-label="Choose theme">
+                <button type="button" class="theme-btn active" data-theme="midnight">Midnight</button>
+                <button type="button" class="theme-btn" data-theme="sunset">Sunset</button>
+                <button type="button" class="theme-btn" data-theme="aurora">Aurora</button>
+            </div>
+        </section>
+
+        <section class="board-card" aria-label="Memory board">
+            <div class="board" id="board"></div>
+        </section>
+    </main>
+
+    <div id="countdownOverlay" class="overlay" aria-live="polite"></div>
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>

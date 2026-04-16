@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero">
+            <p class="eyebrow">Arcade challenge</p>
+            <h1>Whack-a-Mole</h1>
+            <p class="subtitle">Tap the mole before it disappears. Pause, resume, and chase a new high score.</p>
+        </section>
+
+        <section class="stats-bar" aria-label="Game stats">
+            <div class="score-box">
+                <span>Score</span>
+                <strong id="score">0</strong>
+            </div>
+            <div class="score-box">
+                <span>Time</span>
+                <strong id="timeLeft">30</strong>
+            </div>
+            <div class="score-box">
+                <span>Best</span>
+                <strong id="maxScore">0</strong>
+            </div>
+        </section>
+
+        <section class="status-card">
+            <div class="status-line">
+                <span id="gameStatus">Ready to play</span>
+                <strong id="comboStatus">Combo x0</strong>
+            </div>
+            <div class="timer-track" aria-hidden="true">
+                <div class="timer-fill" id="timerFill"></div>
+            </div>
+        </section>
+
+        <section class="controls-card">
+            <button id="startBtn" class="start-btn" type="button">Start Game</button>
+            <div class="control-group">
+                <button id="pauseBtn" class="pause-Btn" type="button" disabled>Pause</button>
+                <button id="resumeBtn" class="resume-Btn" type="button" disabled>Resume</button>
+            </div>
+        </section>
+
+        <section class="difficulty-card" aria-label="Difficulty settings">
+            <div class="status-line">
+                <span id="difficultyLabel">Difficulty</span>
+                <strong id="difficultyHint">Normal speed</strong>
+            </div>
+            <div class="difficulty-group" role="group" aria-label="Select difficulty">
+                <button id="easyBtn" class="difficulty-btn" type="button">Easy</button>
+                <button id="normalBtn" class="difficulty-btn active" type="button">Normal</button>
+                <button id="hardBtn" class="difficulty-btn" type="button">Hard</button>
+            </div>
+        </section>
+
+        <section class="board-card" aria-label="Game board">
+            <div class="game-board">
+                <button class="hole" id="hole1" aria-label="Hole 1" type="button"><div class="mole"></div></button>
+                <button class="hole" id="hole2" aria-label="Hole 2" type="button"><div class="mole"></div></button>
+                <button class="hole" id="hole3" aria-label="Hole 3" type="button"><div class="mole"></div></button>
+                <button class="hole" id="hole4" aria-label="Hole 4" type="button"><div class="mole"></div></button>
+                <button class="hole" id="hole5" aria-label="Hole 5" type="button"><div class="mole"></div></button>
+                <button class="hole" id="hole6" aria-label="Hole 6" type="button"><div class="mole"></div></button>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
